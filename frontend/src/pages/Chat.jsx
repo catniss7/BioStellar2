@@ -1,6 +1,10 @@
 import React, { useRef, useState } from "react";
 import Card from "../components/Card";
 import { postChat } from "../api";
+import Chat from "./pages/Chat";  // <-- your existing chatbot page
+
+// Inside <Routes>
+<Route path="/chatbot" element={<Chat />} />
 
 export default function Chat(){
   const [messages, setMessages] = useState([{id:0, sender:'bot', text:'Hello — I am the Archivist. Ask me about experiments, papers, or missions.'}]);
@@ -53,3 +57,4 @@ export default function Chat(){
     </div>
   );
 }
+
