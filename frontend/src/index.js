@@ -4,11 +4,19 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
 
+// Optional: reportWebVitals (blank, safe to keep)
+import reportWebVitals from './reportWebVitals';
 
-createRoot(document.getElementById('root')).render(
-<React.StrictMode>
-<BrowserRouter>
-<App />
-</BrowserRouter>
-</React.StrictMode>
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );
+
+// Call reportWebVitals (does nothing but prevents errors)
+reportWebVitals();
