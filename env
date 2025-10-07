@@ -1,0 +1,9 @@
+CEREBRAS_API_KEY=csk-kfnnjtf2whv6evmp5d45d6pr886nvdvy8tnvckm2yyvpjh8e
+AZURE_EMBEDDINGS_API_KEY=Ek5NWwEebnvUUuZIb2FGb93v7q4lFzJhrEW8y343ykEEDqhQAc7nJQQJ99BJACF24PCXJ3w3AAAAACOGklIQ
+AZURE_API_ENDPOINT=https://joshp-mgdxcl9c-uaenorth.cognitiveservices.azure.com/
+PGHOST=avengers.postgres.database.azure.com
+PGUSER=avengers
+PGPORT=5432
+PGDATABASE=postgres
+PGPASSWORD=ASPchallenge@123
+ 
