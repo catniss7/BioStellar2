@@ -3,12 +3,12 @@ version: '3.9'
 services:
   backend:
     build:
-      context: .
-      dockerfile: Dockerfile.backend
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     env_file:
-      - .env
+      - ./.env
     environment:
       - CEREBRAS_API_KEY=${CEREBRAS_API_KEY}
     volumes:
@@ -17,12 +17,12 @@ services:
 
   frontend:
     build:
-      context: .
-      dockerfile: Dockerfile.frontend
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - ./backend/ai/frontend:/app
+      - ./frontend:/app
       - /app/node_modules
     depends_on:
       - backend
