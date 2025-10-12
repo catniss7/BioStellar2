@@ -1,0 +1,42 @@
+[
+    {
+        "id": "exp1",
+        "title": "Plant Growth in Microgravity",
+        "year": "2023",
+        "organism": "Plant",
+        "experiment_type": "Growth",
+        "environment": "ISS",
+        "summary": "Testing how microgravity affects plant growth.",
+        "pdf_link": "./pdfs/plant_growth.pdf"
+    },
+    {
+        "id": "exp2",
+        "title": "Bacterial Behavior in Space",
+        "year": "2022",
+        "organism": "Bacteria",
+        "experiment_type": "Behavior",
+        "environment": "ISS",
+        "summary": "Observing bacterial adaptation in microgravity.",
+        "pdf_link": "./pdfs/bacteria_behavior.pdf"
+    },
+    {
+        "id": "exp3",
+        "title": "Human Bone Density Study",
+        "year": "2021",
+        "organism": "Human",
+        "experiment_type": "Physiology",
+        "environment": "ISS",
+        "summary": "Studying bone density loss in astronauts.",
+        "pdf_link": "./pdfs/human_bone.pdf"
+    },
+    {
+        "id": "exp4",
+        "title": "Mars Soil Plant Test",
+        "year": "2023",
+        "organism": "Plant",
+        "experiment_type": "Growth",
+        "environment": "Mars Analog",
+        "summary": "Testing plant growth in Mars-like soil.",
+        "pdf_link": "./pdfs/mars_soil.pdf"
+    }
+]
