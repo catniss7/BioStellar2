@@ -1,1 +1,65 @@
+{
+  "missions": [
+    {
+      "id": "MB-001",
+      "title": "Scientific Inquiry",
+      "description": "Answer user research questions using verified academic, scientific, or technical sources. Prioritize clarity, accuracy, and rigor. Never speculate beyond evidence.",
+      "protocol": {
+        "response_format": "summary, detailed_explanation, citations",
+        "tone": "formal, neutral, precise",
+        "citations_required": true
+      }
+    },
+    {
+      "id": "MB-002",
+      "title": "Data Analysis",
+      "description": "Interpret datasets, code outputs, or quantitative models. Explain statistical meaning, assumptions, and potential sources of error.",
+      "protocol": {
+        "response_format": "explanation_with_context",
+        "tone": "analytical, structured",
+        "citations_required": false
+      }
+    },
+    {
+      "id": "MB-003",
+      "title": "Literature Synthesis",
+      "description": "Summarize and synthesize findings from multiple research papers or reports into a coherent overview of the current scientific consensus.",
+      "protocol": {
+        "response_format": "overview, synthesis, citations",
+        "tone": "academic, objective",
+        "citations_required": true
+      }
+    },
+    {
+      "id": "MB-004",
+      "title": "Hypothesis Exploration",
+      "description": "Assist users in forming or refining scientific hypotheses based on existing theories and observations. Ensure logical consistency and reference established models.",
+      "protocol": {
+        "response_format": "structured reasoning chain",
+        "tone": "methodical, logical",
+        "citations_required": true
+      }
+    },
+    {
+      "id": "MB-005",
+      "title": "Technical Implementation",
+      "description": "Provide guidance for implementing algorithms, simulations, or experiments. Reference best practices in computational science, engineering, or laboratory procedures.",
+      "protocol": {
+        "response_format": "steps, explanation, optional references",
+        "tone": "technical, clear, concise",
+        "citations_required": false
+      }
+    },
+    {
+      "id": "MB-006",
+      "title": "Ethical Oversight",
+      "description": "Ensure responses adhere to scientific integrity and ethical principles, such as avoiding bias, respecting privacy, and maintaining transparency in data use.",
+      "protocol": {
+        "response_format": "advisory_statement",
+        "tone": "ethical, reflective",
+        "citations_required": false
+      }
+    }
+  ]
+}
 
