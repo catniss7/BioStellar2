@@ -1,69 +1,51 @@
-# experiment_comparison.py
-
 import json
-from collections import Counter
+import os
+from typing import List, Dict, Any
 
-# -------------------------
-# Step 1: Fake experiment data
-# -------------------------
-experiments = [
-    {
-        "title": "Plant growth in microgravity",
-        "organism": "Plant",
-        "experiment_type": "Growth",
-        "environment": "ISS"
-    },
-    {
-        "title": "Bacteria survival in radiation",
-        "organism": "Bacteria",
-        "experiment_type": "Radiation",
-        "environment": "ISS"
-    },
-    {
-        "title": "Fungi behavior in space",
-        "organism": "Fungi",
-        "experiment_type": "Behavior",
-        "environment": "Moon analog"
-    },
-    {
-        "title": "Human cells exposed to microgravity",
-        "organism": "Human",
-        "experiment_type": "Cellular",
-        "environment": "ISS"
-    },
-    {
-        "title": "Algae growth under Mars-like light",
-        "organism": "Algae",
-        "experiment_type": "Growth",
-        "environment": "Mars analog"
+# Path to the fake experiments JSON
+FAKE_EXPERIMENTS_FILE = os.path.join(
+    os.path.dirname(__file__), "..", "data", "fake_experiments.json"
+)
+
+def load_experiment_data() -> List[Dict[str, Any]]:
+    """
+    Load all fake experiments from the JSON file.
+    Returns a list of experiments.
+    """
+    with open(FAKE_EXPERIMENTS_FILE, "r", encoding="utf-8") as f:
+        experiments = json.load(f)
+    return experiments
+
+def compare_experiments(exp_id_1: int, exp_id_2: int, metrics: List[str] = []) -> Dict[str, Any]:
+    """
+    Compare two experiments by their index (exp_id_1, exp_id_2).
+    Metrics can include: "year", "organism", "experiment_type", etc.
+    Returns a dictionary with comparison results.
+    """
+    experiments = load_experiment_data()
+
+    try:
+        exp1 = experiments[exp_id_1]
+        exp2 = experiments[exp_id_2]
+    except IndexError:
+        return {"error": "Experiment ID out of range."}
+
+    comparison = {}
+    for metric in metrics:
+        comparison[metric] = {
+            "exp1": exp1.get(metric, "Unknown"),
+            "exp2": exp2.get(metric, "Unknown"),
+            "match": exp1.get(metric) == exp2.get(metric)
+        }
+
+    return {
+        "exp1_title": exp1.get("title", "Unknown"),
+        "exp2_title": exp2.get("title", "Unknown"),
+        "comparison": comparison
     }
-]
 
-# -------------------------
-# Step 2: Count experiments per organism
-# -------------------------
-organisms = [e['organism'] for e in experiments]
-organism_counts = Counter(organisms)
-
-print("Experiment counts per organism:")
-for organism, count in organism_counts.items():
-    print(f"{organism}: {count}")
-
-# -------------------------
-# Step 3: Count experiments per type
-# -------------------------
-types = [e['experiment_type'] for e in experiments]
-type_counts = Counter(types)
-
-print("\nExperiment counts per type:")
-for exp_type, count in type_counts.items():
-    print(f"{exp_type}: {count}")
-
-# -------------------------
-# Step 4: Save fake data to JSON for frontend
-# -------------------------
-with open("fake_experiments.json", "w") as f:
-    json.dump(experiments, f, indent=4)
-
-print("\nFake experiment data saved to 'fake_experiments.json'. Frontend can now use this file.")
-
+# Example usage:
+if __name__ == "__main__":
+    # Compare the first two experiments for year and organism
+    result = compare_experiments(0, 1, metrics=["year", "organism", "experiment_type"])
+    print(json.dumps(result, indent=2))
