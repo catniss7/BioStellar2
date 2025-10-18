@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 from features.experiment_comparison import compare_experiments, load_experiment_data
 from features.mission_insight import generate_mission_insights
-from features.student_section import add_student, assign_mission, get_student_data
+#from features.student_section import add_student, assign_mission, get_student_data
 
 app = FastAPI(title="Biostellar API", description="🚀 Biostellar API")
 
